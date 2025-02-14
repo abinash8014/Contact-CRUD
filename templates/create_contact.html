@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Create_contact Page
+{% endblock title %}
+
+{% block content %}
+  <center>
+    <h1>Create Your contact Here</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ECFO.as_p}}
+        <input type="submit" value="create_contact">
+    </form>
+  </center>
+{% endblock content %}

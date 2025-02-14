@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{CO.name}} | Details
+{% endblock title %}
+
+{% block content %}
+<center>
+  <div class="card" style="width: 18rem;">
+    <img src="{{CO.profile_pic.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{CO.name}}</h5>
+      <p class="card-text">{{CO.add}}</p>
+      
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{CO.pno}}</li>
+        <li class="list-group-item">{{CO.email}}</li>
+      </ul>
+      <a href="{% url 'update' CO.pk %}" class="btn btn-primary">Edit Contact</a>
+      <a href="{% url 'delete' CO.pk %}" class="btn btn-danger">Delete Contact</a>
+  </div>
+</center>
+{% endblock content %}
